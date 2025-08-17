@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 
@@ -13,17 +14,17 @@ public class Main extends JFrame {
     }
 
     class Canvas extends JPanel {
+
+      Grid grid;
+
       public Canvas() {
         setPreferredSize(new Dimension(720, 720));
+        grid = new Grid();
       }
 
       @Override
       public void paint(Graphics g) {
-        for (int i =10; i < 720; i += 35) {
-          for (int j = 10; j <720; j += 35){
-          g.drawRect(i, j, 35, 35);
-          }
-        }
+        grid.paint(g);
       }
     }
 
