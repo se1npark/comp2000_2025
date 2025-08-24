@@ -12,13 +12,38 @@ public class Main extends JFrame {
 
     class Canvas extends JPanel {
       Grid grid = new Grid();
+      Cat cat;
+      Dog dog;
+      Rabbit rabbit;
+
+      int row1 = (int)(Math.random() * 20);
+      int col1 = (int)(Math.random() * 20);
+
+      int row2 = (int)(Math.random() * 20);
+      int col2 = (int)(Math.random() * 20);
+
+      int row3 = (int)(Math.random() * 20);
+      int col3 = (int)(Math.random() * 20);
+
       public Canvas() {
         setPreferredSize(new Dimension(720, 720));
+
+        Cell cCell = new Cell(10 + row1 * Cell.size, 10 + col1 * Cell.size);
+        cat = new Cat(cCell);
+
+        Cell dCell = new Cell(10 + row2 * Cell.size, 10 + col2 * Cell.size);
+        dog = new Dog(dCell);
+
+        Cell rCell = new Cell(10 + row3 * Cell.size, 10 + col3 * Cell.size);
+        rabbit = new Rabbit(rCell);
       }
 
       @Override
       public void paint(Graphics g) {
         grid.paint(g, getMousePosition());
+        cat.paint(g, getMousePosition());
+        dog.paint(g, getMousePosition());
+        rabbit.paint(g, getMousePosition());
       }
     }
 

@@ -16,11 +16,11 @@ public class Cell {
 
   // methods
   public void paint(Graphics g, Point mousePos) {
-    // if(contains(mousePos)) {
-    //  g.setColor(Color.GRAY);
-    // } else {
+    if(contains(mousePos)) {
+    g.setColor(Color.GRAY);
+    } else {
      g.setColor(Color.WHITE);
-    // }
+    }
     g.fillRect(x, y, size, size);
     g.setColor(Color.BLACK);
     g.drawRect(x, y, size, size);
